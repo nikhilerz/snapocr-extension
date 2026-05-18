@@ -1,0 +1,109 @@
+/* SnapOCR content styles */
+
+/* ── Overlay ─────────────────────────────────────────────────────────────── */
+.snapocr-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2147483640;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.snapocr-hint {
+  position: fixed;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 20, 0.88);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 100px;
+  z-index: 2147483647;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+}
+
+.snapocr-selbox {
+  position: fixed;
+  display: none;
+  border: 2px solid #4f9eff;
+  background: rgba(79, 158, 255, 0.07);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+/* ── Toast notification ──────────────────────────────────────────────────── */
+.snapocr-toast {
+  position: fixed;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  background: rgba(18, 18, 28, 0.95);
+  color: #e8e8f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+  z-index: 2147483647;
+  animation: snapocr-slide-up 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+  backdrop-filter: blur(12px);
+}
+
+.snapocr-toast-success {
+  background: rgba(22, 38, 22, 0.96);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(80,200,80,0.25);
+  color: #7ce88d;
+}
+
+.snapocr-toast-error {
+  background: rgba(35, 18, 18, 0.96);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,80,80,0.2);
+  color: #ff8080;
+}
+
+.snapocr-toast-hide {
+  animation: snapocr-slide-down 0.35s ease-in forwards;
+}
+
+.snapocr-check {
+  font-size: 17px;
+}
+
+/* ── Spinner ─────────────────────────────────────────────────────────────── */
+.snapocr-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2.5px solid rgba(255,255,255,0.15);
+  border-top-color: #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: snapocr-spin 0.7s linear infinite;
+}
+
+/* ── Animations ──────────────────────────────────────────────────────────── */
+@keyframes snapocr-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes snapocr-slide-up {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes snapocr-slide-down {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to   { opacity: 0; transform: translateX(-50%) translateY(14px); }
+}

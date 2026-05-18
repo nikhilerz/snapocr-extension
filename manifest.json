@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "SnapOCR",
+  "version": "1.0",
+  "description": "Select any area on screen and instantly extract text from it.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.ocr.space/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "SnapOCR — Click to snip"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "activate-ocr": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Activate SnapOCR snipping tool"
+    }
+  }
+}

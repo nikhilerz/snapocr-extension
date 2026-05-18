@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        width: 220px;
+        padding: 16px;
+        font-family: sans-serif;
+        background: #1e1e2e;
+        color: #fff;
+        margin: 0;
+      }
+      h3 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        color: #4f9eff;
+      }
+      p {
+        font-size: 12px;
+        color: #aaa;
+        margin: 0 0 12px;
+        line-height: 1.5;
+      }
+      button {
+        width: 100%;
+        padding: 9px;
+        background: #4f9eff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover { background: #2e7de0; }
+      .shortcut {
+        text-align: center;
+        font-size: 11px;
+        color: #666;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>✦ SnapOCR</h3>
+    <p>Click below or use the shortcut to snip any area and extract text.</p>
+    <button id="activate">Start Snipping</button>
+    <div class="shortcut">Shortcut: Ctrl+Shift+S</div>
+    <script src="popup.js"></script>
+  </body>
+</html>
